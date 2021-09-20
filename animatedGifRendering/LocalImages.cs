@@ -32,7 +32,12 @@ namespace animatedGifRendering
                     button1
                 }
             };
-
+            if (File.Exists(Path.Combine(GetCurrentImagePath(), "Dmg.gif")))
+            {
+                secondImageSource = Path.Combine(GetCurrentImagePath(), "Dmg.gif");
+                image.Source = secondImageSource;
+                OnPropertyChanged(nameof(secondImageSource));
+            }
         }
 
         private void ChangeText(object sender, EventArgs e)
